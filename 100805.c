@@ -22,7 +22,6 @@ int main(void)
     do
     {
 
-        aadd += add;
         add = 0;
         if (s[i] != 0)
         {
@@ -33,10 +32,12 @@ int main(void)
             else
             {
                 add += i - now;
-                now = i;
+                now = i + s[i];
             }
         }
         i++;
+        aadd += add;
+
     } while (i <= n);
     printf("%d", aadd);
     return 0;
